@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 100%;
+  margin: 4rem 0 7rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.center {
+  width: 100%;
+}
+
+.center .header {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 17px;
+}
+
+.center .inputElement {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 37px 0px 37px;
+}
+
+.inputElement .inputText {
+  padding: 8px;
+  font-size: 12px;
+  margin-top: 10px;
+  border: none;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  background-color: rgb(231, 231, 231);
+  border-radius: 5px;
+}
+.inputText:focus {
+  outline: gray;
+}
+
+.inputButton,
+#btn {
+  background-color: rgb(5, 117, 223);
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  border: none;
+}
+
+.inputButton:hover {
+  cursor: pointer;
+  background-color: rgba(5, 118, 223, 0.552);
+}
+
+#alert {
+  background: rgb(5, 117, 223);
+  font-size: 12px;
+  padding: 8px;
+  color: white;
+  font-weight: 200;
+}
+
+.forgetPassword {
+  margin: auto;
+  color: rgb(0, 66, 128);
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.line {
+  position: relative;
+  width: 87%;
+  height: 1px;
+  background-color: rgb(188, 188, 188);
+}
+
+.line span {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 0 10px;
+  color: rgb(143, 143, 143);
+}
+
+footer {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+.first {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(0, 66, 128);
+  line-height: 0.4;
+}
+
+.first .left {
+  text-align: left;
+}
+
+.first .left .id{
+  color: rgb(78, 78, 78);
+}
+
+.first .right {
+  text-align: right;
+}
+
+footer .end {
+  text-align: center;
+  color: rgb(0, 66, 128);
+}

